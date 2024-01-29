@@ -12,7 +12,6 @@ app.use(express.json());
 // get all categories
 router.get('/', (req, res) => {
   // find all categories
-  // be sure to include its associated Products
   Category.findAll({
     include: [
       {
@@ -32,7 +31,6 @@ router.get('/', (req, res) => {
 // get one category by its `id` value
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
-  // be sure to include its associated Products
   Category.findByPk(req.params.id, {
     include: [
       {
